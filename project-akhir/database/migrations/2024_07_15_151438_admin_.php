@@ -11,9 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('transaksis', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::create('admin', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('email', 255);
+            $table->string('password', 255);
+
         });
     }
 
@@ -22,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('transaksis');
+        Schema::dropIfExists('admin');
     }
 };
